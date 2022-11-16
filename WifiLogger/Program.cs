@@ -49,6 +49,12 @@ namespace WifiLogger
 
             foreach (var field in fields)
             {
+                if (!xparams.ContainsKey(field))
+                {
+                    Console.Error.WriteLine("Missing field for adapter information. Aborting.");
+                    return;
+                }
+
                 items.Add(xparams[field]);
             }
 
